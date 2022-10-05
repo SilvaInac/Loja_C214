@@ -1,8 +1,9 @@
 # Projeto C214 / Loja Tenis - Eng Software 
 
 ## :memo: Informações do Projeto
- Será feito com o framework Angular (
-[Referência](https://angular.io/cli#cli-overview-and-command-reference) ).
+-A ideia do projeto é criar uma loja de vendas de tênis <br>
+-Será feito com o framework Angular (
+[Referência](https://angular.io/cli#cli-overview-and-command-reference) ). 
 
 ## :wrench: Instalação 
 ```
