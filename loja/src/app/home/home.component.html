@@ -8,44 +8,50 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body class="p-3">
   <!-- Header -->
-  <header>
+  <header class="mt-3 mb-3">
     <h2>Loja C214</h2>
     <a class="bag" routerLink="/home/carrinho" routerLinkActive="ativo">
-      <i class="material-symbols-outlined">
+      <span class="material-symbols-outlined">
         shopping_cart
-      </i>
+      </span>
     </a>
   </header>
   <!-- Busca -->
   <section class="search-field mt-3 mb-3">
-    <input type="text" class="search-input form-control">
-    <button class="btn btn-primary btn-sm border-0 rounded-circle" (click)="buscar">
-      <span class="material-symbols-outlined icon">
+    <input type="text" class="search-input form-control" [(ngModel)]="palavra" name="palavra">
+    <button class="btn btn-primary border-0 rounded-circle" (click)="buscar(palavra)">
+      <span class="material-symbols-outlined">
         search
       </span>
     </button>
   </section>
   <!-- Lista -->
   <section class="list-field mt-3 mb-3">
-    <table class="products-list">
+    <table class="products-list" id="tabela">
       <thead>
         <th>Produto</th>
         <th>Preço</th>
         <th>Adicionar ao carrinho</th>
       </thead>
       <tbody>
-        <tr>
-          <td>Tênis 1</td>
-          <td>R$399.90</td>
+        <tr *ngFor="let item of produtos">
+          <td>{{item.nome}}</td>
+          <td>{{item.preco}}</td>
           <td>
-            <button (click)="adicionarProduto" class="btn btn-success btn-xs rounded-lg">
+            <button (click)="adicionarProduto(item.id)" class="btn btn-success btn-xs rounded-lg" id="btn-add-{{item.id}}">
               <span class="material-symbols-outlined">
                 add
+              </span>
+            </button>
+            <button class="btn btn-success btn-xs rounded-lg" id="btn-done-{{item.id}}" hidden>
+              <span class="material-symbols-outlined">
+                done
               </span>
             </button>
           </td>

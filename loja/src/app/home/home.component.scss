@@ -19,16 +19,24 @@ section {
   margin: 0px;
 
   &.search-field { //seção de busca
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
     margin: 15px;
     padding: 10px;
 
-    input {
-      // width: 300px;
-      height: 20px;
+    & input {
+      height: 1.5rem;
       margin: 10px;
       border-radius: 10px;
+    }
+
+    & button{
+      height: 2rem;
+      width: 2rem;
+
+      span{
+        margin-right: 4px;
+      }
     }
 
   }
@@ -50,10 +58,22 @@ section {
         margin: 15px;
         padding: 15px;
         width: 120px;
-        align-content: center;
+        text-align: center;
+
+        button{
+          height: 1.5rem;
+          width: 1.5rem;
+          padding: 0px 5px 9px 0px;
+        }
       }
     }
   }
 }
 
-
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
