@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-carrinho',
@@ -7,12 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CarrinhoComponent implements OnInit {
 
+  produtos = [
+    {id: 1, nome: 'Adidas',preco: 239.50},
+    {id: 2, nome: 'Nike',preco: 439.50}
+  ];
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  removerProduto(){
-
+  removerProduto(idProduto: number){
+    this.produtos.find((x) => {
+     this.produtos.splice(x.id, idProduto)
+    });
   }
 }
