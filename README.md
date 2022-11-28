@@ -80,10 +80,23 @@ Em que um usuário pode:
 - Adicionar produtos ao seu carrinho
 - Pesquisar por um produto
 
+<img width="508" alt="Screen Shot 2022-11-28 at 00 34 42" src="https://user-images.githubusercontent.com/90875966/204188769-a89caa60-8191-4a91-bfb0-061097486e2e.png">
+
+<img width="508" alt="Screen Shot 2022-11-28 at 00 35 16" src="https://user-images.githubusercontent.com/90875966/204188870-0549700a-d58e-4abb-8778-d6cd5a3df917.png">
+
+<img width="508" alt="Screen Shot 2022-11-28 at 00 35 34" src="https://user-images.githubusercontent.com/90875966/204188882-b80d81ad-c7a2-49bc-b5bc-8b83e00d53be.png">
+
+
 ### Carrinho
 Em que um usuário pode:
 - Consultar os produtos do seu carrinho
-- Remover produtos do seu carrinho
+- Remover produtos do seu car
+
+<img width="508" alt="Screen Shot 2022-11-28 at 00 34 56" src="https://user-images.githubusercontent.com/90875966/204188908-9237cdaf-4ea6-4457-ab0d-cbd326ca8ccd.png">
+
+<img width="508" alt="Screen Shot 2022-11-28 at 00 40 01" src="https://user-images.githubusercontent.com/90875966/204189273-61fba300-870d-4a3b-9d7a-7aa265c609f5.png">
+
+
 
 ## :framed_picture: Back-end
 No back-end foram usados:
