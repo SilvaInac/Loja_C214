@@ -11,6 +11,9 @@ export class ShoeServices {
     async getAll(){
       return await this.shoeModel.find().exec();
     }
+    async getByCart(){
+      return await this.shoeModel.find().where('shoppingCart').equals('true').exec();
+    }
   
     async getById(id: string)
     {
