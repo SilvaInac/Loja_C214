@@ -16,7 +16,7 @@ export class CarrinhoComponent implements OnInit {
   constructor(private carrinhoService: CarrinhoService){ }
 
   ngOnInit(): void {
-    this.carrinhoService.getAll().subscribe(carrinho =>
+    this.carrinhoService.getByCart().subscribe(carrinho =>
       this.carrinho = carrinho);
   }
 
