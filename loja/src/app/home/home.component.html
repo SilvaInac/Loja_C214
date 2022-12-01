@@ -40,16 +40,16 @@
         <th>Adicionar ao carrinho</th>
       </thead>
       <tbody>
-        <tr *ngFor="let item of produtos">
-          <td>{{item.nome}}</td>
-          <td>{{item.preco}}</td>
+        <tr *ngFor="let item of tenis">
+          <td>{{item.name}}</td>
+          <td>{{item.price}}</td>
           <td>
-            <button (click)="adicionarProduto(item.id)" class="btn btn-success btn-xs rounded-lg" id="btn-add-{{item.id}}">
+            <button (click)="adicionarProduto" class="btn btn-success btn-xs rounded-lg" id="btn-add-{{item._id}}">
               <span class="material-symbols-outlined">
                 add
               </span>
             </button>
-            <button class="btn btn-success btn-xs rounded-lg" id="btn-done-{{item.id}}" hidden>
+            <button class="btn btn-success btn-xs rounded-lg" id="btn-done-{{item._id}}" hidden>
               <span class="material-symbols-outlined">
                 done
               </span>

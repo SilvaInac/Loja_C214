@@ -1,4 +1,8 @@
+
+import { CarrinhoService } from './../carrinho/shared/carrinho.service';
+import { ActivatedRoute, Router, Routes } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+import { Tenis } from '../carrinho/shared/tenis';
 
 @Component({
   selector: 'app-home',
@@ -7,18 +11,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  produtos = [
-    {id: 1, nome: 'Adidas',preco: 239.50},
-    {id: 2, nome: 'Nike',preco: 439.50},
-    {id: 3, nome: 'Puma',preco: 189.50},
-    {id: 4, nome: 'Keds', preco: 255.60}
-  ];
+  tenis: Tenis[] = [];
+
   palavra: string;
 
-  constructor() { }
+  constructor(
+    private carrinhoService: CarrinhoService
+  ){}
 
   ngOnInit(): void {
+    this.carrinhoService.getAll().subscribe(carrinho =>
+      this.tenis = carrinho)
   }
+
 
   adicionarProduto(idProduto: number) {
     document.getElementById('btn-done-'+idProduto)?.removeAttribute('hidden');
@@ -33,8 +38,8 @@ export class HomeComponent implements OnInit {
     if (palavra) {
       palavra = palavra.toUpperCase();
 
-      this.produtos = this.produtos.filter(a =>
-        a.nome.toUpperCase().indexOf(palavra) >= 0
+      this.tenis = this.tenis.filter(a =>
+        a.name.toUpperCase().indexOf(palavra) >= 0
       );
     } else {
       return;

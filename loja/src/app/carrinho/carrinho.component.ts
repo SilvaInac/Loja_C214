@@ -1,5 +1,8 @@
+import { CarrinhoService } from './shared/carrinho.service';
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { ActivatedRoute, Router, Routes } from '@angular/router';
+import { Tenis } from './shared/tenis';
 
 @Component({
   selector: 'app-carrinho',
@@ -8,19 +11,20 @@ import { FormControl } from '@angular/forms';
 })
 export class CarrinhoComponent implements OnInit {
 
-  produtos = [
-    {id: 1, nome: 'Adidas',preco: 239.50},
-    {id: 2, nome: 'Nike',preco: 439.50}
-  ];
+  carrinho: Tenis [] = [];
 
-  constructor() { }
+  constructor(private carrinhoService: CarrinhoService){ }
 
   ngOnInit(): void {
+    this.carrinhoService.getAll().subscribe(carrinho =>
+      this.carrinho = carrinho);
   }
 
-  removerProduto(idProduto: number){
-    this.produtos.find((x) => {
-     this.produtos.splice(x.id, idProduto)
-    });
+  removerProduto(carrinho: Tenis){
+    if(carrinho){
+      const index = this.carrinho.findIndex((carrinhoItem)=> carrinhoItem._id == carrinho._id)
+      this.carrinho.splice(index,1)
+    }
   }
 }
+
