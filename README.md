@@ -68,7 +68,7 @@ npm start
 ```
 e rode o servidor back-end:
 ```
-node server.js
+npm start
 ```
 
 Observação: Há um script no arquivo package.json que possibilita que o projeto seja executado com o comando sugerido acima.
