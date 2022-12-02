@@ -17,10 +17,6 @@ export class ShoesController {
     async getById(@Param ('id') id: string):Promise<Shoe>{
         return this.shoeSevice.getById(id);
     }
-    @Get('/id/teste')
-    async getByCart():Promise<Shoe[]>{
-        return this.shoeSevice.getByCart();
-    }
 
     @Post()
     async create(@Body() shoe: Shoe):Promise<Shoe>{
