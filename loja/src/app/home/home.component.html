@@ -25,7 +25,7 @@
   <!-- Busca -->
   <section class="search-field mt-3 mb-3">
     <input type="text" class="search-input form-control" [(ngModel)]="palavra" name="palavra">
-    <button class="btn btn-primary border-0 rounded-circle" (click)="buscar(palavra)">
+    <button class="btn btn-primary p-1 border-0 rounded-circle" (click)="buscar(palavra)">
       <span class="material-symbols-outlined">
         search
       </span>
@@ -40,16 +40,16 @@
         <th>Adicionar ao carrinho</th>
       </thead>
       <tbody>
-        <tr *ngFor="let item of produtos">
-          <td>{{item.nome}}</td>
-          <td>{{item.preco}}</td>
+        <tr *ngFor="let item of tenis">
+          <td>{{item.name}}</td>
+          <td>{{item.price}}</td>
           <td>
-            <button (click)="adicionarProduto(item.id)" class="btn btn-success btn-xs rounded-lg" id="btn-add-{{item.id}}">
+            <button (click)="adicionarProduto(item)" class="btn btn-success rounded-lg" id="btn-add-{{item._id}}">
               <span class="material-symbols-outlined">
                 add
               </span>
             </button>
-            <button class="btn btn-success btn-xs rounded-lg" id="btn-done-{{item.id}}" hidden>
+            <button class="btn btn-success rounded-lg" id="btn-done-{{item._id}}" hidden>
               <span class="material-symbols-outlined">
                 done
               </span>

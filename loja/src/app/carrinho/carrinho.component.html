@@ -29,12 +29,12 @@
         <th>Preço</th>
         <th>Adicionar ao carrinho</th>
       </thead>
-      <tbody>
-        <tr *ngFor="let item of produtos">
-          <td>{{item.nome}}</td>
-          <td>{{item.preco}}</td>
+      <tbody *ngIf="carrinho.length">
+        <tr *ngFor="let item of carrinho" id="{{item._id}}">
+          <td>{{item.name}}</td>
+          <td>{{item.price}}</td>
           <td>
-            <button (click)="removerProduto(item.id)" class="btn btn-danger btn-xs rounded-lg" id="btn-remove-{{item.id}}">
+            <button (click)="removerProduto(item)" class="btn btn-danger btn-xs rounded-lg" id="btn-remove-{{item._id}}">
               <span class="material-symbols-outlined">
                 remove
               </span>
