@@ -1,9 +1,9 @@
 # Projeto C214 / Loja Tenis - Eng Software 
 
 # :memo: Informações Gerais
-Aprenda a instalar as dependências necessárias, criar e executar um projeto angular.
+Aprenda a instalar as dependências e recursos necessários e, a criar e executar um projeto angular.
 
-## :wrench: Instalação 
+## :wrench: Instalando: 
 Instale o [Visual Studio Code](https://code.visualstudio.com/download) <br>
 Instale o [Node.js](https://nodejs.org/en/download/) <br>
 Instale o Angular CLI pela linha de comando, com:
@@ -31,7 +31,7 @@ ng generate module nome
 ng generate service nome
 ```
 
-## :gear: Executando o projeto
+## :gear: Executando:
 ```
 ng serve
 ```
