@@ -104,3 +104,20 @@ No back-end foram usados:
 - O banco de dados MongoDB
 - O express que cria API's e conecta o mongo ao Angular
 - O mongoose
+
+Foi utilizado o NestJS
+
+Para iniciar a API, é necessário abrir a pasta no vscode com nome de "loja-backend"
+Para isso, utilizando um teminal basta abrir com o seguinte comando
+
+```
+cd loja-backend/
+```
+Feito isso, instale as dependeicas do servidor com o seguinte comando :
+```
+npm install
+```
+Com isso, o servidor estará pronto para ser iniciado.
+```
+npm start
+```
