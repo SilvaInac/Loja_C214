@@ -13,10 +13,6 @@ export class CarrinhoService {
 
       return this.http.get<Tenis[]>(`${environment.api}/shoes`);
     }
-    getByCart(){
-
-      return this.http.get<Tenis[]>(`${environment.api}/shoes/id/teste`);
-    }
     getById(id:string)
     {
       return this.http.get<Tenis>(`${environment.api}/shoes/${id}`);
