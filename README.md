@@ -122,9 +122,9 @@ Com isso, o servidor estará pronto para ser iniciado.
 npm start
 ```
 Para editar o banco de dados que a API utiliza, é necessário modificar a linha 9 no arquivo app.module.ts -  dentro de src
+- LOJA_C214
+- src
+- app.module.ts
 
-  -LOJA_C214
-  --src
-  ---app.module.ts
   ----MongooseModule.forRoot('seu endereço aqui')
   
