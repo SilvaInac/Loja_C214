@@ -10,36 +10,33 @@ export class CarrinhoService {
   constructor(private http: HttpClient) {}
 
     getAll(){
-
       return this.http.get<Tenis[]>(`${environment.api}/shoes`);
     }
-    getByCart(){
 
+    getByCart(){
       return this.http.get<Tenis[]>(`${environment.api}/shoes/id/teste`);
     }
-    getById(id:string)
-    {
+
+    getById(id:string){
       return this.http.get<Tenis>(`${environment.api}/shoes/${id}`);
     }
 
-    save (tenis: Tenis)
-    {
-      if(tenis._id)
-      {
-        return this.http.put<Tenis>(`${environment.api}/shoes/${tenis._id}`,{
-          name: tenis.name,
-          preice: tenis.price
-        });
-      }else{
-        return this.http.post<Tenis>(`${environment.api}/shoes`,{
-          description: tenis.name,
-          completed: tenis.price
-        });
-      }
+    updateAddCart(tenis: Tenis){
+      return this.http.put<Tenis>(`${environment.api}/shoes/${tenis._id}`,{
+        name: tenis.name,
+        price: tenis.price
+      });
+    }
+
+    save(tenis: Tenis){
+      return this.http.post<Tenis>(`${environment.api}/shoes`,{
+        name: tenis.name,
+        price: tenis.price
+      });
     }
 
     delete(id: string){
-      return this.http.delete<Tenis>(`${environment.api}/shoes/${id}}`);
+      return this.http.delete<Tenis>(`${environment.api}/shoes/${id}`);
     }
 
 }

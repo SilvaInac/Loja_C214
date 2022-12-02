@@ -1,5 +1,5 @@
 import { CarrinhoService } from './shared/carrinho.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { ActivatedRoute, Router, Routes } from '@angular/router';
 import { Tenis } from './shared/tenis';
@@ -11,20 +11,25 @@ import { Tenis } from './shared/tenis';
 })
 export class CarrinhoComponent implements OnInit {
 
+  @Input()
   carrinho: Tenis [] = [];
+
+  @Output()
+  onDeleteTenis = new EventEmitter();
 
   constructor(private carrinhoService: CarrinhoService){ }
 
   ngOnInit(): void {
-    this.carrinhoService.getByCart().subscribe(carrinho =>
+    this.carrinhoService.getAll().subscribe(carrinho =>
       this.carrinho = carrinho);
   }
 
-  removerProduto(carrinho: Tenis){
-    if(carrinho){
-      const index = this.carrinho.findIndex((carrinhoItem)=> carrinhoItem._id == carrinho._id)
-      this.carrinho.splice(index,1)
-    }
+  removerProduto(item: Tenis){
+
+    console.log(item._id);
+    this.carrinhoService.delete(item._id).subscribe();
+
+
   }
 }
 
