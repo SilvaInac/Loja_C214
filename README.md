@@ -104,6 +104,7 @@ No back-end foram usados:
 - O banco de dados MongoDB
 - O express que cria API's e conecta o mongo ao Angular
 - O mongoose
+- Postman para verificar o funcionamento.
 
 Foi utilizado o NestJS
 
@@ -127,4 +128,12 @@ Para editar o banco de dados que a API utiliza, é necessário modificar a linha
 - app.module.ts
 
   ----MongooseModule.forRoot('seu endereço aqui')
+
+Para iniciar os testes coloque 
+
+```
+npm test
+```
+
+
   
