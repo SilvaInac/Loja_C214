@@ -4,6 +4,7 @@
 Aprenda a instalar as dependências necessárias, criar e executar um projeto angular.
 
 ## :wrench: Instalação 
+Instale o [Visual Studio Code](https://code.visualstudio.com/download) <br>
 Instale o [Node.js](https://nodejs.org/en/download/) <br>
 Instale o Angular CLI pela linha de comando, com:
 ```
